@@ -1,0 +1,23 @@
+{
+  "Version": 1,
+  "Hash": "/OAeqqAz1vYHy3rMmZwxLAcqolTwzaCi88C15XiE+qI=",
+  "Source": "Bp.Client.Service",
+  "BasePath": "_content/Bp.Client.Service",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "/Users/felixperez/Projects/BackendBp/Bp.Common/src/Bp.Common.Service/Bp.Common.Service.csproj",
+      "Version": 2,
+      "Source": "Bp.Common.Service",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

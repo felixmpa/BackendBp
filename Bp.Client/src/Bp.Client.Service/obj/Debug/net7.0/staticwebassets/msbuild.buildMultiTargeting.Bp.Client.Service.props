@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/Bp.Client.Service.props" />
+</Project>

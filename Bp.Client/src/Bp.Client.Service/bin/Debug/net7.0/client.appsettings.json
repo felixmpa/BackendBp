@@ -1,0 +1,15 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "BackendBpDb": "Data Source=localhost;Initial Catalog=BackendBp;User Id=SA;Password=Password1;Encrypt=False;TrustServerCertificate=True;"
+  },
+  "ApiServices": {
+    "BpTransactionApi": "http://host.docker.internal:5200/"
+  }
+}
