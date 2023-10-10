@@ -1,0 +1,64 @@
+version: "3.8"
+
+services:
+  bp-client:
+    build:
+      context: ../
+      dockerfile: Bp.Infra/docker/Bp.Client/Dockerfile
+      args:
+        BUILDPLATFORM: linux/amd64
+        configuration: Release
+    image: bp-client
+    ports:
+      - 5100:5100
+    environment:
+      ASPNETCORE_URLS: http://+:5100
+      ASPNETCORE_ENVIRONMENT: Development
+    volumes:
+      - ~/.vsdbg:/remote_debugger:rw
+    networks:
+      - backend-bp
+    depends_on:
+      - sqldata
+
+  bp-transaction:
+    build:
+      context: ../
+      dockerfile: Bp.Infra/docker/Bp.Transaction/Dockerfile
+      args:
+        BUILDPLATFORM: linux/amd64
+        configuration: Release
+    image: bp-transaction
+    ports:
+      - 5200:5200
+    environment:
+      ASPNETCORE_URLS: http://+:5200
+      ASPNETCORE_ENVIRONMENT: Development
+    volumes:
+      - ~/.vsdbg:/remote_debugger:rw
+    networks:
+      - backend-bp
+    depends_on:
+      - sqldata
+
+  sqldata:
+    image: mcr.microsoft.com/azure-sql-edge
+    container_name: sqldata
+    environment:
+      - SA_PASSWORD=Password1
+      - ACCEPT_EULA=1
+    ports:
+      - "1433:1433"
+    cap_add:
+      - SYS_PTRACE
+    volumes:
+      - sqldata:/var/opt/mssql
+    networks:
+      - backend-bp
+
+networks:
+  backend-bp:
+    driver: bridge
+
+volumes:
+  sqldata:
