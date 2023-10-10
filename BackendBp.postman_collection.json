@@ -1,0 +1,385 @@
+{
+	"info": {
+		"_postman_id": "e815b436-0661-4796-8a5f-9e1172bdcd28",
+		"name": "BackendBp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30375064"
+	},
+	"item": [
+		{
+			"name": "customers",
+			"item": [
+				{
+					"name": "customers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{bp-client-url}}/customers",
+							"host": [
+								"{{bp-client-url}}"
+							],
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customers/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{bp-client-url}}/customers/2005",
+							"host": [
+								"{{bp-client-url}}"
+							],
+							"path": [
+								"customers",
+								"2005"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customers",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"person\": {\n    \"identification\": \"0007890002\",\n    \"name\": \"Juan Osorio\",\n    \"sex\": 0,\n    \"age\": 35,\n    \"address\": \"13 junio y Equinoccial\",\n    \"phone\": \"098874587\"\n  },\n  \"password\": \"1245\",\n  \"status\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bp-client-url}}/customers",
+							"host": [
+								"{{bp-client-url}}"
+							],
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customers",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"person\": {\n    \"identification\": \"0001230001\",\n    \"name\": \"Jose Lema Edited\",\n    \"sex\": 0,\n    \"age\": 19,\n    \"address\": \"Otavalo sn y principal #123\",\n    \"phone\": \"098254799\"\n  },\n  \"password\": \"12346789\",\n  \"status\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bp-client-url}}/customers/1",
+							"host": [
+								"{{bp-client-url}}"
+							],
+							"path": [
+								"customers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customers/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{bp-client-url}}/customers/3",
+							"host": [
+								"{{bp-client-url}}"
+							],
+							"path": [
+								"customers",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "accounts",
+			"item": [
+				{
+					"name": "accounts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{bp-transaction-url}}/accounts",
+							"host": [
+								"{{bp-transaction-url}}"
+							],
+							"path": [
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "accounts/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{bp-transaction-url}}/accounts/1",
+							"host": [
+								"{{bp-transaction-url}}"
+							],
+							"path": [
+								"accounts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "accounts/{id}",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"customerId\": 3,\n  \"accountNumber\": \"585545\",\n  \"accountType\": 4,\n  \"initialBalance\": 1000,\n  \"status\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bp-transaction-url}}/accounts/",
+							"host": [
+								"{{bp-transaction-url}}"
+							],
+							"path": [
+								"accounts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "accounts/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"customerId\": 2005,\n  \"accountNumber\": \"100020059999\",\n  \"accountType\": 1,\n  \"status\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bp-transaction-url}}/accounts/2",
+							"host": [
+								"{{bp-transaction-url}}"
+							],
+							"path": [
+								"accounts",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "accounts/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bp-transaction-url}}/accounts/1",
+							"host": [
+								"{{bp-transaction-url}}"
+							],
+							"path": [
+								"accounts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "transactions",
+			"item": [
+				{
+					"name": "transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{bp-transaction-url}}/transactions",
+							"host": [
+								"{{bp-transaction-url}}"
+							],
+							"path": [
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "transactions (deposit)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"accountNumber\": \"495878\",\n  \"type\": 1,\n  \"amount\": 150\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bp-transaction-url}}/transactions",
+							"host": [
+								"{{bp-transaction-url}}"
+							],
+							"path": [
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "transactions (withdraw)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"accountNumber\": \"496825\",\n  \"type\": 2,\n  \"amount\": -540.00\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bp-transaction-url}}/transactions",
+							"host": [
+								"{{bp-transaction-url}}"
+							],
+							"path": [
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reports",
+			"item": [
+				{
+					"name": "customerAccounts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{bp-client-url}}/reports/customerAccounts?customerId=2&startDate=2023-10-01&endDate=2023-10-15",
+							"host": [
+								"{{bp-client-url}}"
+							],
+							"path": [
+								"reports",
+								"customerAccounts"
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": "2"
+								},
+								{
+									"key": "startDate",
+									"value": "2023-10-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2023-10-15"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "bp-client-url",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "bp-transaction-url",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
